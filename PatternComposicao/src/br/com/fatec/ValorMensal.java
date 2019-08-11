@@ -5,7 +5,7 @@ public class ValorMensal implements CalculoValor {
 	private double valorMensal;
 	@Override
 	
-	public double valorConta(double duracao, Veiculo veiculo) {
+	public double valorConta(double duracao) {
 		return  this.valorMensal * Math.ceil(duracao / mes); 
 	}
 	

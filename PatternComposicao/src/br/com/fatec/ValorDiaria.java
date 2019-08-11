@@ -5,7 +5,7 @@ public class ValorDiaria implements CalculoValor {
 	private double valorDiaria;
 	
 	@Override
-	public double valorConta(double duracao, Veiculo veiculo) {
+	public double valorConta(double duracao) {
 		return this.valorDiaria * Math.ceil(duracao / dia);
 	}
 	

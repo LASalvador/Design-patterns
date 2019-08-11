@@ -12,10 +12,6 @@ public class ContaEstacionamento {
 	public ContaEstacionamento() {
 		// TODO Auto-generated constructor stub
 	}
-	public void setCalculo(CalculoValor vl) {
-		this.calculoValor = vl;
-		
-	}
 	public double getInicio() {
 		return inicio;
 	}
@@ -40,11 +36,11 @@ public class ContaEstacionamento {
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
-	
 	public void calcularDuracao() {
-		this.duracao = this.fim  - this.inicio;
+		this.duracao = this.fim - this.inicio;
 	}
 	public void calcularValor() {
+
 		if (this.duracao <= (12 * 3600000)) {
 			this.calculoValor = new ValorHora(c.getVeiculo().valor);
 		} 
@@ -54,11 +50,9 @@ public class ContaEstacionamento {
 			this.calculoValor = new ValorMensal(c.getVeiculo().valor);
 		}
 
-		return calculoValor.valorConta();
+		return calculoValor.valorConta(this.duracao);
 	}
 }
 
-//  Definir onde setar inicio(construtor ou metodo set ou usar current time)
-// Definir onde setar fim(metodo set ou com valor pré-determinado)
-// ou usar o método de calcular valor com entrada de tempo final?
-//  Chamar calculo valor com duracao
+// Definir valores p dia e mes
+// Definir regras p veiculos
