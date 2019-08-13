@@ -6,5 +6,6 @@ public abstract class Veiculo {
 
 	public Veiculo(double valor ) {
 		 this.valor = valor;
+		 
 	}
 }

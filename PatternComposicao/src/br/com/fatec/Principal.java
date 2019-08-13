@@ -7,15 +7,18 @@ public class Principal {
 	public static void main(String[] args) {
 		Veiculo v = new Passeio(2);
 		
-		// Date data = new Date();
-		// data.getTime()
+		 Date data  = new Date();
+		 double timeAtual = data.getTime();
+		
 
 		ContaEstacionamento c = new ContaEstacionamento();
-		c.setInicio()
 		c.setVeiculo(v);
-		c.setFim();
+		c.setInicio(timeAtual);
+		double duasHoras = 2592E6 * 1;
+		double timeFinal = timeAtual + duasHoras;
+		c.setFim(timeFinal);
 		c.calcularDuracao();
-		c.calcularValor();
+		System.out.println(c.calcularValor());
 
 	}
 

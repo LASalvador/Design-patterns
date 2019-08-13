@@ -5,7 +5,7 @@ public class ContaEstacionamento {
 	private double fim;
 	private CalculoValor calculoValor;
 	private Veiculo veiculo;
-	private double duracao;
+	private Long duracao;
 	
 	
 	
@@ -37,17 +37,17 @@ public class ContaEstacionamento {
 		this.veiculo = veiculo;
 	}
 	public void calcularDuracao() {
-		this.duracao = this.fim - this.inicio;
+		this.duracao = (long) (this.fim - this.inicio);
 	}
-	public void calcularValor() {
-
+	public double calcularValor() {
+		System.out.println(this.duracao);
 		if (this.duracao <= (12 * 3600000)) {
-			this.calculoValor = new ValorHora(c.getVeiculo().valor);
+			this.calculoValor = new ValorHora(this.getVeiculo().valor);
 		} 
 		else if(this.duracao <= (15 * 86400000)){
-			this.calculoValor = new ValorDiaria(c.getVeiculo().valor);
+			this.calculoValor = new ValorDiaria(this.getVeiculo().valor);
 		} else {
-			this.calculoValor = new ValorMensal(c.getVeiculo().valor);
+			this.calculoValor = new ValorMensal(this.getVeiculo().valor);
 		}
 
 		return calculoValor.valorConta(this.duracao);
