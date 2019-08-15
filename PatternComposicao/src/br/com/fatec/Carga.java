@@ -2,10 +2,13 @@ package br.com.fatec;
 
 public class Carga extends Veiculo {
 	
-	private double valor = 4.0;
+	public int numEixo;
+	public double valCarga;
 
-	public Carga(double tempo) {
-		super(tempo);
+	public Carga(String categoria, int numEixo, double valCarga) {
+		super(categoria);
+		this.numEixo = numEixo;
+		this.valCarga = valCarga;
 	}
 
 }

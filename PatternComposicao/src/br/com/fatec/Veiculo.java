@@ -2,10 +2,11 @@ package br.com.fatec;
 
 public abstract class Veiculo {
 
-	public double valor;
+	public String categoria;
+	public double numEixo;
+	public double valCarga;
 
-	public Veiculo(double valor ) {
-		 this.valor = valor;
-		 
+	public Veiculo(String categoria ) {
+		 this.categoria = categoria; 
 	}
 }
