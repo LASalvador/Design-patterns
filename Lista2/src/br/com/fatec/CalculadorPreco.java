@@ -2,23 +2,18 @@ package br.com.fatec;
 
 public class CalculadorPreco {
 	Produto p;
+	CalculadorDesconto c;
 	public CalculadorPreco(Produto p) {
 		this.p = p;
 	}
 	public double calcularDesconto() {
-		double valorDesconto;
 		if (p.getDesconto().getTipo() == 1) {
-			valorDesconto = p.getDesconto().getValorDesconto();
+			this.c = new CalculadorDescontoBruto(p);
 		} else {
-			valorDesconto = p.getValorProduto() * p.getDesconto().getValorDesconto();
+			this.c = new CalculadorDescontoPorcetagem(p);
 		}
+	
 		
-		if(valorDesconto > p.getValorProduto()) {
-			return p.getValorProduto();
-		}
-		
-		double valorComDesconto = p.getValorProduto() - valorDesconto;
-		
-		return valorComDesconto;
+		return c.calcularDesconto();
 	}
 }

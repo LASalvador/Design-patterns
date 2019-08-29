@@ -32,7 +32,7 @@ public class Principal {
 	Produto p2 = new Produto();
 	p2.setNome("barbie");
 	p2.setValorProduto(100);
-	p2.setDescricao("barbie coleção princesa, com coroa e varios vestidos");
+	p2.setDescricao("barbie coleï¿½ï¿½o princesa, com coroa e varios vestidos");
 	
 	ProdutoComposto pc1 = new ProdutoComposto("Composicao");
 	pc1.adicionarProduto(p2);
@@ -55,12 +55,7 @@ public class Principal {
 	pc2.setCalPreco(c2);
 	pc2.setDesconto(d1);
 	System.out.println("Produto Composto 2:"+pc2.getCalPreco().calcularDesconto());
-	
-//	Desconto d2 = new Desconto(25, 1);
-//	CalculadorPreco c2 = new CalculadorPreco(p2);
-//	p2.setDesconto(d2);
-//	p2.setCalPreco(c2);
-//	System.out.println("Produto 2:"+p2.getCalPreco().calcularDesconto());
+
 	
 	}
 
