@@ -1,123 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="br.com.fatec.ValorMensal" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/ValorMensal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="131" width="154" x="206" y="2"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <interface id="2" language="java" name="br.com.fatec.CalculoValor" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/CalculoValor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="77" width="154" x="497" y="407"/>    
+  <interface id="1" language="java" name="br.com.fatec.CalculoTaxa" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/CalculoTaxa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="77" width="165" x="613" y="398"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="3" language="java" name="br.com.fatec.ValorHora" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/ValorHora.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="131" width="154" x="400" y="2"/>    
+  <class id="2" language="java" name="br.com.fatec.Carga" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/Carga.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="113" width="141" x="830" y="569"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="br.com.fatec.Carga" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/Carga.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="113" width="141" x="698" y="578"/>    
+  <class id="3" language="java" name="br.com.fatec.TaxaHora" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/TaxaHora.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="95" width="165" x="305" y="11"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="br.com.fatec.Passeio" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/Passeio.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="77" width="101" x="879" y="578"/>    
+  <class id="4" language="java" name="br.com.fatec.ContaEstacionamento" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/ContaEstacionamento.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="347" width="192" x="920" y="11"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="br.com.fatec.Principal" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/Principal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="95" width="114" x="1020" y="2"/>    
+  <class id="5" language="java" name="br.com.fatec.ValorMensal" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/ValorMensal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="131" width="154" x="1152" y="11"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="br.com.fatec.ContaEstacionamento" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/ContaEstacionamento.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="365" width="192" x="788" y="2"/>    
+  <class id="6" language="java" name="br.com.fatec.Passeio" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/Passeio.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="77" width="101" x="1011" y="569"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="br.com.fatec.ValorDiaria" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/ValorDiaria.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="131" width="154" x="594" y="2"/>    
+  <class id="7" language="java" name="br.com.fatec.Principal" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/Principal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="95" width="114" x="151" y="11"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="br.com.fatec.Veiculo" project="PatternComposicao" 
-    file="/PatternComposicao/src/br/com/fatec/Veiculo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="131" width="108" x="788" y="407"/>    
+  <class id="8" language="java" name="br.com.fatec.TaxaMes" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/TaxaMes.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="95" width="165" x="510" y="11"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="10">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="11" name="calculoValor"/>      
-      <multiplicity id="12" minimum="0" maximum="1"/>    
+  <class id="9" language="java" name="br.com.fatec.TaxaDia" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/TaxaDia.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="95" width="165" x="715" y="11"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.com.fatec.ValorDiaria" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/ValorDiaria.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="131" width="154" x="1346" y="11"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="br.com.fatec.Veiculo" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/Veiculo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="131" width="108" x="920" y="398"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="br.com.fatec.ValorHora" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/ValorHora.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="131" width="154" x="1540" y="11"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="13" language="java" name="br.com.fatec.CalculoValor" project="PatternStrategy" 
+    file="/PatternStrategy/src/br/com/fatec/CalculoValor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="77" width="154" x="1240" y="398"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <association id="14">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="15" name="calculoValor"/>      
+      <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="13">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <realization id="14">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <association id="15">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="16" name="veiculo"/>      
-      <multiplicity id="17" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="18">    
+  <realization id="17">    
     <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="2"/>  
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="18">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
   </realization>  
   <realization id="19">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="2"/>  
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
   </realization>  
-  <generalization id="20">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="9"/>  
+  <realization id="20">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="21">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="22" name="calculoTaxa"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
+  <realization id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <realization id="27">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="28">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="29" name="veiculo"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

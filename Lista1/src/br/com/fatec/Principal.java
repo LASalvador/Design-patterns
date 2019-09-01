@@ -45,7 +45,7 @@ public class Principal {
 		c.setInicio(timeAtual);
 		double fim = unidadeTempo * tempoEst;
 		double timeFinal = timeAtual + fim;
-		c.tipo = tipoPlano;
+		
 		c.setFim(timeFinal);
 		c.calcularDuracao();
 		c.setTaxa();
