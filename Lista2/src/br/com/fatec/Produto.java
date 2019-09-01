@@ -3,24 +3,11 @@ package br.com.fatec;
 public class Produto {
 	private String nome;
 	private double valorProduto;
-	private Desconto desconto;
-	private CalculadorPreco calPreco;
+	private String descricao;
 	
 	public Produto(String nome, double valorProduto) {
 		this.nome = nome;
 		this.valorProduto = valorProduto;
-	}
-	public Desconto getDesconto() {
-		return desconto;
-	}
-	public void setDesconto(Desconto desconto) {
-		this.desconto = desconto;
-	}
-	public CalculadorPreco getCalPreco() {
-		return calPreco;
-	}
-	public void setCalPreco(CalculadorPreco calPreco) {
-		this.calPreco = calPreco;
 	}
 	public String getNome() {
 		return nome;

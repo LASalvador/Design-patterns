@@ -6,7 +6,7 @@ public class ProdutoComposto extends Produto{
 	 private ArrayList<Produto> listaProdutos;
 	 
 	public ProdutoComposto(String nome) {
-		this.nome= nome;
+		super(nome,0);
 		this.listaProdutos = new ArrayList<Produto>();
 	}
 	
