@@ -19,13 +19,7 @@ public class CalculadorPreco {
 		return c.calcularDesconto(p.getValorProduto(), d.getValorDesconto());
 	}	
 	public double calcularPreco() {
-		double valorDesconto, valorNovo;
-		
-		valorDesconto= this.calcularDesconto();
-		valorNovo = this.p.getValorProduto()- valorDesconto;
-		
-		this.p.setValorProduto(valorNovo);
-		
+		this.p.setValorProduto(this.calcularDesconto());
 		return p.getValorProduto();
 	}
 }
