@@ -21,10 +21,12 @@ public class Principal {
 		
 		for(Pagamento pag: pagamento) {
 			System.out.println(pag.getNome());
-			System.out.println(pag.getCPF());
-		}
-		
-		
+			if(Validador.validaCpf(pag.getCPF())) {
+				System.out.println("CPF " + pag.getCPF() + " válido");
+			} else {
+				System.out.println("CPF " + pag.getCPF() + " inválido");
+			}
+		}	
 		
 	}
 }

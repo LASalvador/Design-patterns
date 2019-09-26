@@ -25,7 +25,6 @@ public class Leitor {
 		
 		if(extensao.equals(".json")) {
 			parserArquivo = new ParserJson();
-			System.out.println("Json");
 		} else {
 			parserArquivo = new ParserXML();
 		}
