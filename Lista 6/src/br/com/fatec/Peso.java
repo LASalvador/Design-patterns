@@ -1,8 +1,9 @@
 package br.com.fatec;
 
-public class Peso implements Constantes {
+public class Peso {
 	private double kg;
 	private double arroba;
+	private double kgEquivalenteArroba = 15;
 	
 	public double getKg() {
 		return this.kg;
@@ -20,11 +21,11 @@ public class Peso implements Constantes {
 		this.arroba = arroba;
 	}
 	
-	public void converterKgEmArroba() {
+	public void adicionarPesoEmArroba() {
 		this.arroba = this.kg / kgEquivalenteArroba;
 	}
 	
-	public void converterArrobaEmKg() {
+	public void adicionarPesoEmKg() {
 		this.kg = kgEquivalenteArroba * this.arroba;
 	}
 	

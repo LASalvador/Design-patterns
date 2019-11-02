@@ -4,19 +4,21 @@ public class PesoBuilder {
 	
 	private Peso alvo;
 	
-	public Peso iniciar() {
+	public PesoBuilder iniciar() {
 		alvo = new Peso();
-		return alvo;
+		return this;
 	}
 	
-	public void comKg(double kg) {
+	public PesoBuilder comKg(double kg) {
 		alvo.setKg(kg);
-		alvo.converterKgEmArroba();
+		alvo.adicionarPesoEmArroba();
+		return this;
 	}
 	
-	public void comArroba(double Arroba) {
+	public PesoBuilder comArroba(double Arroba) {
 		alvo.setArroba(Arroba);
-		alvo.converterArrobaEmKg();
+		alvo.adicionarPesoEmKg();
+		return this;
 	}
 	
 	public Peso criarPeso() {

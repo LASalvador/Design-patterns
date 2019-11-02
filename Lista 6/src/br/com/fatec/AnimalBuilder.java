@@ -2,26 +2,63 @@ package br.com.fatec;
 
 public class AnimalBuilder {
 	
-	private Animal alvo;
 	private Bovino bovino;
 	private Suino suino;
 	
-	public Animal iniciarBovino() {
+	public AnimalBuilder iniciarBovino() {
 		bovino = new Bovino();
-		return bovino;
+		return this;
 	}
 	
-	public void bovinocomSexo (char sexo) {
+	public AnimalBuilder bovinocomSexo (char sexo) {
 		bovino.setSexo(sexo);
+		return this;
 	}
 	
-	public void bovinocomNovilho (boolean novilho) {
+	public AnimalBuilder bovinocomNovilho (boolean novilho) {
 		bovino.setNovilho(novilho);
+		return this;
 	}
 	
-	public Animal iniciarSuino() {
-		suino = new Suino();
-		return suino;
+	public AnimalBuilder bovinoComKg(double peso) {
+		PesoBuilder pb = new PesoBuilder().iniciar().comKg(peso);
+		Peso p = pb.criarPeso();
+		this.bovino.setPeso(p);
+		return this;
 	}
 
+	public AnimalBuilder bovinoComArroba(double peso) {
+		PesoBuilder pb = new PesoBuilder().iniciar().comArroba(peso);
+		Peso p = pb.criarPeso();
+		this.bovino.setPeso(p);
+		return this;
+	}
+	
+	public Bovino criarBovino() {
+		return this.bovino;
+	}
+
+	public AnimalBuilder iniciarSuino() {
+		suino = new Suino();
+		return this;
+	}
+	
+	public AnimalBuilder suinoComKg(double peso) {
+		PesoBuilder pb = new PesoBuilder().iniciar().comKg(peso);
+		Peso p = pb.criarPeso();
+		this.suino.setPeso(p);
+		return this;
+				
+	}
+	
+	public AnimalBuilder suinoComArroba(double peso) {
+		PesoBuilder pb = new PesoBuilder().iniciar().comArroba(peso);
+		Peso p = pb.criarPeso();
+		this.suino.setPeso(p);
+		return this;
+	}
+	
+	public Suino criarSuino() {
+		return this.suino;
+	}
 }
