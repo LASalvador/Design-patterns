@@ -1,13 +1,19 @@
 package br.com.fatec.model;
 
-import java.util.Date;
-
 public class Cliente {
 	private String nome;
 	private int idade;
 	private String genero;
 	private String telefone;
-	private Date dataNasc;
+	private String dataNasc;
+
+	public Cliente(String nome, int idade, String genero, String telefone, String dataNasc) {
+		setNome(nome);
+		setIdade(idade);
+		setGenero(genero);
+		setTelefone(telefone);
+		setdataNasc(dataNasc);
+	}
 	
 	public void setNome(String nome){
 		this.nome = nome;
@@ -41,11 +47,11 @@ public class Cliente {
 		return this.telefone;
 	}
 
-	public void setdataNasc (Date dataNasc){
+	public void setdataNasc (String dataNasc){
 		this.dataNasc = dataNasc;
 	}
 	
-	public Date getdataNasc(){
+	public String getdataNasc(){
 		return this.dataNasc;
 	}
 
