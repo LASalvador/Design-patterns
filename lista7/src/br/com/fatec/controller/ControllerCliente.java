@@ -14,6 +14,6 @@ public class ControllerCliente {
 	public void criarCliente() {
 		String cliente = viewcliente.criacaoCliente();
 		clienteService.criarCliente(cliente);
-		viewcliente.msgSucesso();
+		viewcliente.msgSucesso("Cliente criado");
 	}
 }

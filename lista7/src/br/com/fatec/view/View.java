@@ -26,7 +26,7 @@ public class View {
 		int escolha = this.scanner.nextInt();
 		return escolha;
 	}
-	public void msgSucesso() {
-		System.out.println("Cliente criado com sucesso");
+	public void msgSucesso(String msgInicio) {
+		System.out.println(msgInicio + "com sucesso");
 	}
 }
