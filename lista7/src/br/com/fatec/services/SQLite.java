@@ -2,7 +2,10 @@ package br.com.fatec.services;
 
 import java.sql.*;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 import br.com.fatec.model.Cliente;
+import br.com.fatec.model.ClienteGroup;
 
 public class SQLite {
 	private Connection conn;
@@ -22,19 +25,18 @@ public class SQLite {
 
 	public void initDB() {	  
 		try {
-			this.stm.execute("DROP TABLE IF EXISTS cliente");
-			
+	
 			this.stm.execute("CREATE TABLE IF NOT EXISTS cliente ("
 				+ "id integer PRIMARY KEY AUTOINCREMENT,"
 				+ "nome varchar(70),"
-				+ "idade integer"
+				+ "idade integer,"
 				+ "genero varchar(70),"
 				+ "telefone varchar(70),"
 				+ "dataNasc varchar(70));");
 			this.stm.execute("CREATE TABLE IF NOT EXISTS servico ("
 					+ "id integer PRIMARY KEY AUTOINCREMENT,"
 					+ "nome varchar(70),"
-					+ "valor real"
+					+ "valor real,"
 					+ "descricao varchar(70));");
 			
 			this.stm.execute("CREATE TABLE IF NOT EXISTS servicoXCliente("
@@ -51,15 +53,67 @@ public class SQLite {
 	
 	public void inserirCliente(Cliente cliente) {
 		try {
-			this.stm.execute("INSERT into VALUES ("
-					+ cliente.getNome() + ","
+			this.stm.execute("insert into cliente(nome, idade, genero, telefone, datanasc) values ("
+					+ "'"  + cliente.getNome() + "',"
 					+ cliente.getIdade() + ","
-					+ cliente.getGenero() + ","
-					+ cliente.getTelefone() + ","
-					+ cliente.getdataNasc() 
+					+ "'" + cliente.getGenero() + "',"
+					+ "'" + cliente.getTelefone() + "',"
+					+ "'" + cliente.getdataNasc() + "'" 
 					+ ");" );
 		}catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+	public ResultSet listarTodosCliente() {
+		ResultSet resultSet = null;
+	
+		try {
+			resultSet = this.stm.executeQuery("select * from cliente");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	public ResultSet selecionarCliente(String nomeCliente) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "select * from cliente where nome =  '" + nomeCliente + "'"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	
+	public void atualizarCliente(Cliente c, int id) {
+		String query = "UPDATE cliente " 
+		+ "SET nome = '"+ c.getNome()  + "', "
+		+ "idade = "+ c.getIdade()  + ", "
+		+ "genero = '"+ c.getGenero()  + "', "
+		+ "telefone = '"+ c.getTelefone()  + "', "
+		+ "dataNasc = '"+ c.getdataNasc()  + "' "
+		+ "WHERE id = " + id;
+	
+		try {
+			this.stm.execute(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deletarCliente(int id) {
+		String query = "DELETE FROM cliente WHERE id = " + id + ";" ;
+		try {
+			this.stm.execute(query);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

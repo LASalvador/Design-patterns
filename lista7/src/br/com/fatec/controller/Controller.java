@@ -1,10 +1,16 @@
 package br.com.fatec.controller;
 
+import br.com.fatec.services.SQLite;
 import br.com.fatec.view.View;
 
 public class Controller {
+	SQLite connect;
+	public Controller() {
+		connect = new SQLite();
+		connect.initDB();
+	}
 	
-	public void inicio() {
+	public void inicio() {		
 		View v = new View();
 		int escolha = v.menu();
 		lidarEscolharMenu(escolha);
@@ -25,17 +31,18 @@ public class Controller {
 		switch (escolha) {
         case 1:
             controllerCliente.criarCliente();
+            break;
         case 2:
-            System.out.println("Edição");
+        	controllerCliente.listarTodosClientes();
             break;
         case 3:
-            System.out.println("Remoção");
+            controllerCliente.listaCliente();
             break;
         case 4:
-            System.out.println("Lista todos");
+            controllerCliente.editarCliente();
             break;
         case 5:
-            System.out.println("Lista um");
+        	controllerCliente.removerCliente();
             break;
 		}
 	}

@@ -18,4 +18,7 @@ public class ClienteGroup {
 	public Cliente getClienteNaPosicao(int posicao) {
 		return this.clientes.get(posicao);
 	}
+	public int tamanhoGrupo() {
+		return this.clientes.size();
+	}
 }

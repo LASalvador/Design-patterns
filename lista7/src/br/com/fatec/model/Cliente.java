@@ -54,6 +54,12 @@ public class Cliente {
 	public String getdataNasc(){
 		return this.dataNasc;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getNome() + " - " + getIdade() + " - " + getGenero() + " - "+ getTelefone() + " - " + getdataNasc();
+	}
 
 
 
