@@ -8,11 +8,8 @@ import br.com.fatec.model.ClienteGroup;
 
 public class ClienteService extends Services{ 
 	
-	public ClienteService() {
-	}
-	
 	public Cliente criarCliente(String cliente) {
-		String[] dadosCliente = this.handlerDados.PadraoParaCliente(cliente);
+		String[] dadosCliente = this.handlerDados.padraoParaCliente(cliente);
 		Cliente c = new Cliente(dadosCliente[0],Integer.parseInt(dadosCliente[1]), dadosCliente[2], dadosCliente[3], dadosCliente[4]);
 		return c;
 	}

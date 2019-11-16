@@ -21,7 +21,7 @@ public class Controller {
 			lidarCliente(escolha);
 		} 
 		else if( escolha <=10) {
-			lidarServico();
+			lidarServico(escolha);
 		} else {
 			System.out.println("404 - NOT FOUND");
 		}
@@ -46,7 +46,25 @@ public class Controller {
             break;
 		}
 	}
-	public void lidarServico() {
+	public void lidarServico(int escolha) {
+		ControllerServico controllerServico = new ControllerServico();
 		
+		switch (escolha) {
+		case 6:
+			controllerServico.criarServico();
+			break;
+		case 7:
+			controllerServico.listarTodosServicos();
+			break;
+		case 8:
+			controllerServico.listarServico();
+			break;
+		case 9:
+			controllerServico.editarServico();
+			break;
+		case 10:
+			controllerServico.removerServico();
+			break;
+		}
 	}
 }

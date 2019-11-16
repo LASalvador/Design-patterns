@@ -6,6 +6,12 @@ public class Servico {
 	private int id;
 	private double valor;
 	
+	public Servico(String nome, String descricao, double valor) {
+		setNome(nome);
+		setDescricao(descricao);
+		setValor(valor);
+	}
+	
 	public void setDescricao(String descricao){
 		this.descricao = descricao;
 	}
@@ -35,5 +41,10 @@ public class Servico {
 	
 	public String getNome(){
 		return this.nome;
+	}
+	
+	@Override
+	public String toString() {
+		return getNome() + "-" + getDescricao() + "-" + getValor();
 	}
 }

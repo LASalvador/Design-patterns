@@ -2,10 +2,8 @@ package br.com.fatec.services;
 
 import java.sql.*;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 import br.com.fatec.model.Cliente;
-import br.com.fatec.model.ClienteGroup;
+import br.com.fatec.model.Servico;
 
 public class SQLite {
 	private Connection conn;
@@ -33,6 +31,9 @@ public class SQLite {
 				+ "genero varchar(70),"
 				+ "telefone varchar(70),"
 				+ "dataNasc varchar(70));");
+			
+//			this.stm.execute("DROP TABLE IF EXISTS servico");
+			
 			this.stm.execute("CREATE TABLE IF NOT EXISTS servico ("
 					+ "id integer PRIMARY KEY AUTOINCREMENT,"
 					+ "nome varchar(70),"
@@ -111,6 +112,72 @@ public class SQLite {
 	
 	public void deletarCliente(int id) {
 		String query = "DELETE FROM cliente WHERE id = " + id + ";" ;
+		try {
+			this.stm.execute(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void inserirServico(Servico servico) {
+		try {
+			this.stm.execute("insert into servico(nome, descricao, valor) values ("
+					+ "'" + servico.getNome() + "',"
+					+ "'" + servico.getDescricao()+ "',"
+					+ servico.getValor() 
+					+ ");" );
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+	public ResultSet listarTodosServicos() {
+		ResultSet resultSet = null;
+		
+		try {
+			resultSet = this.stm.executeQuery("select * from servico");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+
+	public ResultSet selecionarServico(String nomeServico) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "select * from servico where nome =  '" + nomeServico + "'"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;		
+	}
+	
+	
+	public void atualizarServico(Servico s, int id) {
+
+		String query = "UPDATE servico " 
+		+ "SET nome = '"+ s.getNome()  + "', "
+		+ "valor = "+ s.getValor()  + ", "
+		+ "descricao = '"+ s.getDescricao()  + "' "
+		+ "WHERE id = " + id;
+	
+		try {
+			this.stm.execute(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deletarServico(int id) {
+		String query = "DELETE FROM servico WHERE id = " + id + ";" ;
 		try {
 			this.stm.execute(query);
 		} catch (Exception e) {
