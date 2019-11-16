@@ -225,4 +225,50 @@ public class SQLite {
 		
 		return resultSet;
 	}
+	
+	public ResultSet pegarMediaIdadePorGenero(String genero) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "select avg(idade) as mediaIdade from cliente where genero LIKE '" + genero + "%'"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	
+	public ResultSet servicoMaisProcurado() {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "SELECT s.nome as nome, count(a.servico_id) as quantidade FROM servicoXCliente as a "
+			+ "inner join servico as s on s.id = a.servico_id "
+			+ "ORDER BY quantidade asc"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	
+	public ResultSet servicoMaisProcuradoPorGenero(String genero) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "SELECT s.nome as nome, count(a.servico_id) as quantidade FROM servicoXCliente as a "
+			+ "inner join servico as s on s.id = a.servico_id "
+			+ "ORDER BY quantidade asc"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
 }

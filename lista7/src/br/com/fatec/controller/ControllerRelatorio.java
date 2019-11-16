@@ -1,6 +1,7 @@
 package br.com.fatec.controller;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import br.com.fatec.services.RelatorioService;
 import br.com.fatec.view.ViewRelatorio;
@@ -36,7 +37,49 @@ public class ControllerRelatorio extends Controller{
 		} else {
 			generoEscolhido = "m";
 		}
+		ResultSet rs = this.connect.pegarMediaIdadePorGenero(generoEscolhido);
+		int mediaIdade = this.relatorioServico.pegarMediaIdade(rs);
+		this.viewRelatorio.mostrarMediaIdade("media de idade por gênero: ", mediaIdade);
 		
+	}
+
+	public void servicoMaisProcurado() {
+		ResultSet rs = this.connect.servicoMaisProcurado();
+		String servico = null;
+		int quantidade = 0;
+		try {
+			servico = rs.getString("nome");
+			quantidade = rs.getInt("quantidade");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.viewRelatorio.exibirRelatorio(servico, quantidade);
+	}
+	
+	public void servicoMaisProcuradoPorGenero() {
+		int genero = this.viewRelatorio.escolherSexo();
+		String generoEscolhido;
+		
+		if(genero == 1) {
+			generoEscolhido = "f";
+		} else {
+			generoEscolhido = "m";
+		}
+		
+		ResultSet rs = this.connect.servicoMaisProcuradoPorGenero(generoEscolhido);
+		String servico = null;
+		int quantidade = 0;
+		
+		try {
+			servico = rs.getString("nome");
+			quantidade = rs.getInt("quantidade");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		this.viewRelatorio.exibirRelatorio(servico, quantidade);
 	}
 	
 }

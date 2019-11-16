@@ -12,4 +12,7 @@ public class ViewRelatorio extends View{
 	public void mostrarMediaIdade(String msg, int idade) {
 		System.out.println("A " + msg + " é : " + idade);
 	}
+	public void exibirRelatorio(String servico, int quantidade) {
+		System.out.println("O serviço mais pedido é: " + servico + "com " + quantidade + "atendimentos");
+	}
 }

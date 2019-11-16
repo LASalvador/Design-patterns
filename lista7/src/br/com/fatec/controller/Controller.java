@@ -89,7 +89,7 @@ public class Controller {
 			controllerRelatorio.mediaIdadePorGenero();
 			break;
 		case 15:
-			System.out.println("serviço mais procurado");
+			controllerRelatorio.servicoMaisProcurado();
 			break;
 		case 16:
 			System.out.println("serviço mais procurado por genero");
