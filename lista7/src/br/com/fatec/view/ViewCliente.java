@@ -57,13 +57,6 @@ public class ViewCliente extends View{
 		return this.hdDados.clienteParaPadrao(nomeClienteEditar,idadeClienteEditar,generoClienteEditar, telefoneCliente ,dataNasClienteEditar);
 	}
 	
-	public int escolherSexo() {
-		System.out.println("Qual gênero você deseja listar?");
-		System.out.println("1 - feminino");
-		System.out.println("2 - masculino");
-		int sexo = this.scanner.nextInt();
-		return sexo;
-	}
 }
 
 // https://receitasdecodigo.com.br/java/usando-sqlite-em-java

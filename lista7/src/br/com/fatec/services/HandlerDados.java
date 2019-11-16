@@ -15,4 +15,12 @@ public class HandlerDados {
 	public String[] padraParaServico(String servico) {
 		return servico.split("!");
 	}
+	
+	public String relatorioParaPadrao(int idCliente, int idServico) {
+		return idCliente + "!" + idServico;
+	}
+	
+	public String[] padraoParaRelatorio(String relatorio) {
+		return relatorio.split("!");
+	}
 }

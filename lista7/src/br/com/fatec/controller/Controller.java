@@ -16,17 +16,20 @@ public class Controller {
 		lidarEscolharMenu(escolha);
 		
 	}
-	public void lidarEscolharMenu(int escolha) {
+	private void lidarEscolharMenu(int escolha) {
 		if(escolha <= 6) {
 			lidarCliente(escolha);
 		} 
 		else if( escolha <=11) {
 			lidarServico(escolha);
+		} else if(escolha <=15) {
+			lidarRelatorio(escolha);
 		} else {
 			System.out.println("404 - NOT FOUND");
 		}
 	}
-	public void lidarCliente(int escolha) {
+	
+	private void lidarCliente(int escolha) {
 		ControllerCliente controllerCliente = new ControllerCliente();
 		switch (escolha) {
         case 1:
@@ -49,7 +52,8 @@ public class Controller {
             break;
 		}
 	}
-	public void lidarServico(int escolha) {
+	
+	private void lidarServico(int escolha) {
 		ControllerServico controllerServico = new ControllerServico();
 		
 		switch (escolha) {
@@ -70,4 +74,27 @@ public class Controller {
 			break;
 		}
 	}
+	
+	private void lidarRelatorio(int escolha) {
+		ControllerRelatorio controllerRelatorio = new ControllerRelatorio();
+		
+		switch (escolha) {
+		case 12:
+			controllerRelatorio.cadastrarUsoServico();
+			break;
+		case 13:
+			controllerRelatorio.mediaIdade();
+			break;
+		case 14:
+			controllerRelatorio.mediaIdadePorGenero();
+			break;
+		case 15:
+			System.out.println("serviço mais procurado");
+			break;
+		case 16:
+			System.out.println("serviço mais procurado por genero");
+			break;
+		}
+	}
+
 }

@@ -199,4 +199,30 @@ public class SQLite {
 			e.printStackTrace();
 		}
 	}
+	
+	public void inserirUsoServico(int idCliente, int idServico) {
+		try {
+			this.stm.execute("insert into servicoXCliente(cliente_id, servico_id) values ("
+					+ idCliente + ","
+					+ idServico 
+					+ ");" );
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+	public ResultSet pegarMediaIdade() {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "select avg(idade) as mediaIdade from cliente"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
 }
