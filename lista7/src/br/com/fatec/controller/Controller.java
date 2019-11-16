@@ -17,10 +17,10 @@ public class Controller {
 		
 	}
 	public void lidarEscolharMenu(int escolha) {
-		if(escolha <= 5) {
+		if(escolha <= 6) {
 			lidarCliente(escolha);
 		} 
-		else if( escolha <=10) {
+		else if( escolha <=11) {
 			lidarServico(escolha);
 		} else {
 			System.out.println("404 - NOT FOUND");
@@ -36,12 +36,15 @@ public class Controller {
         	controllerCliente.listarTodosClientes();
             break;
         case 3:
-            controllerCliente.listaCliente();
+        	controllerCliente.listarClientesPorGenero();
             break;
         case 4:
-            controllerCliente.editarCliente();
+            controllerCliente.listaCliente();
             break;
         case 5:
+            controllerCliente.editarCliente();
+            break;
+        case 6:
         	controllerCliente.removerCliente();
             break;
 		}
@@ -50,19 +53,19 @@ public class Controller {
 		ControllerServico controllerServico = new ControllerServico();
 		
 		switch (escolha) {
-		case 6:
+		case 7:
 			controllerServico.criarServico();
 			break;
-		case 7:
+		case 8:
 			controllerServico.listarTodosServicos();
 			break;
-		case 8:
+		case 9:
 			controllerServico.listarServico();
 			break;
-		case 9:
+		case 10:
 			controllerServico.editarServico();
 			break;
-		case 10:
+		case 11:
 			controllerServico.removerServico();
 			break;
 		}

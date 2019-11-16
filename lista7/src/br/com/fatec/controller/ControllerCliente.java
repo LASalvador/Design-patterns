@@ -56,4 +56,19 @@ public class ControllerCliente extends Controller{
 		this.connect.deletarCliente(id);
 		this.viewcliente.msgSucesso("Cliente excluído ");
 	}
+
+	public void listarClientesPorGenero() {
+		
+		int sexo = this.viewcliente.escolherSexo();
+		String sexoEscolhido;
+		if(sexo == 1) {
+			sexoEscolhido = "f";
+		} else {
+			sexoEscolhido = "m";
+		}
+		ResultSet rs = this.connect.selecionarClientePorSexo(sexoEscolhido);
+		ClienteGroup cg = this.clienteService.criarClienteGroup(rs);
+		this.viewcliente.listarTodosCliente(cg);
+		
+	}
 }

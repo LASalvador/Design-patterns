@@ -16,16 +16,17 @@ public class View {
 	
 	public int menu() {
 		System.out.println("Escolha uma das opções:");
-		System.out.println("1 - Criar um usuario");
-		System.out.println("2 - Listar todos os usuarios");
-		System.out.println("3 - Listar dados de um usuario");
-		System.out.println("4 - Editar um usuario");
-		System.out.println("5 - Remover um usuario");
-		System.out.println("6 - Criar um servico");
-		System.out.println("7 - Listar dados de todos os servicos");
-		System.out.println("8 - Listar dados de um servico");
-		System.out.println("9 - Editar um servico");
-		System.out.println("10 - Remover um servico");
+		System.out.println("1 - Criar um cliente");
+		System.out.println("2 - Listar todos os clientes");
+		System.out.println("3 - Listar todos clientes de um sexo");
+		System.out.println("4 - Listar dados de um cliente");
+		System.out.println("5 - Editar um cliente");
+		System.out.println("6 - Remover um cliente");
+		System.out.println("7 - Criar um servico");
+		System.out.println("8 - Listar dados de todos os servicos");
+		System.out.println("9 - Listar dados de um servico");
+		System.out.println("10 - Editar um servico");
+		System.out.println("11 - Remover um servico");
 		
 		int escolha = this.scanner.nextInt();
 		return escolha;

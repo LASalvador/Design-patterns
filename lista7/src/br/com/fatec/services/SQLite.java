@@ -71,7 +71,7 @@ public class SQLite {
 		ResultSet resultSet = null;
 	
 		try {
-			resultSet = this.stm.executeQuery("select * from cliente");
+			resultSet = this.stm.executeQuery("select * from cliente order by nome");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,11 +79,26 @@ public class SQLite {
 		
 		return resultSet;
 	}
+	
 	public ResultSet selecionarCliente(String nomeCliente) {
 		ResultSet resultSet = null;
 		try {
 			
 			String query = "select * from cliente where nome =  '" + nomeCliente + "'"; 
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	
+	public ResultSet selecionarClientePorSexo(String genero) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "select * from cliente where genero LIKE  '" + genero + "%'"; 
 			resultSet = this.stm.executeQuery(query);
 			
 		} catch (Exception e) {
@@ -136,7 +151,7 @@ public class SQLite {
 		ResultSet resultSet = null;
 		
 		try {
-			resultSet = this.stm.executeQuery("select * from servico");
+			resultSet = this.stm.executeQuery("select * from servico order by nome");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
