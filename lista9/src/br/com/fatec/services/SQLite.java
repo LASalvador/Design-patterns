@@ -129,6 +129,35 @@ public class SQLite {
 		
 		return resultSet;
 	}
+	
+	public ResultSet pegarSaldoConta(int idConta) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "SELECT cliente_id as 'id', valor FROM conta WHERE id = "+ idConta +" ;";
+			
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	
+	public void atualizarSaldoConta(double valor, int idConta) {
+		String query = "UPDATE conta " 
+		+ "SET valor = "+ valor 
+		+ "WHERE id = " + idConta;
+	
+		try {
+			this.stm.execute(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	// Lancamento
 	public void inserirLancamento(Lancamento lancamento, int idConta) {
 		try {
