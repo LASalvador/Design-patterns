@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 
 import br.com.controller.view.ViewLancamento;
 import br.com.fatec.model.Lancamento;
+import br.com.fatec.model.LancamentoGroup;
 import br.com.fatec.services.LancamentoService;
 
 public class ControllerLancamento extends Controller{
@@ -37,6 +38,11 @@ public class ControllerLancamento extends Controller{
 			saldo-= lancamento.getValor();
 		}
 		this.connect.atualizarSaldoConta(saldo, idConta);
+	}
+	public void mostrarHistorico(int idConta) {
+		ResultSet rs = this.connect.listarLancamentos(idConta);
+		LancamentoGroup lg = this.lancamentoService.construirLancamentoGroup(rs);
+		this.viewLancamento.listarLancamentos(lg);
 	}
 	
 }

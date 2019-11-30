@@ -172,4 +172,19 @@ public class SQLite {
 			e.printStackTrace();
 		}
 	}
+	public ResultSet listarLancamentos(int idConta) {
+		ResultSet resultSet = null;
+		try {
+			
+			String query = "SELECT * FROM lancamento WHERE conta_id = "+ idConta +" ;";
+			
+			resultSet = this.stm.executeQuery(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return resultSet;
+	}
+	
 }

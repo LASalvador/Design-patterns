@@ -1,5 +1,8 @@
 package br.com.controller.view;
 
+import br.com.fatec.model.Lancamento;
+import br.com.fatec.model.LancamentoGroup;
+
 public class ViewLancamento extends View {
 	public String cadastrarEntrada() {
 		return this.cadastrarLancamento("Entrada", "Salario, Vendas ou Investimentos");
@@ -21,5 +24,22 @@ public class ViewLancamento extends View {
 		valor = this.scanner.nextDouble();
 		
 		return this.hdDados.lancamentoParaPadrao(tipoLancamento, classificacao, valor);
+	}
+	
+	public void listarLancamentos(LancamentoGroup lg) {
+		double entrada = 0 ;
+		double saida = 0;
+		
+		for(int i = 0; i < lg.tamanhoGrupo() ; i++) {
+			Lancamento l = lg.getLancamentoNaPosicao(i);
+			System.out.println(l.toString());
+			if(l.getTipoLancamento().equals("entrada")) {
+				entrada += l.getValor();
+			} else {
+				saida += l.getValor();
+			}
+			System.out.println("Valor Total de Entrada: " + entrada);
+			System.out.println("Valor Total de Saída: " + saida);
+		}
 	}
 }

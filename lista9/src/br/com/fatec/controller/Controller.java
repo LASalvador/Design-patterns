@@ -35,12 +35,7 @@ public class Controller {
 			break;
 		default:
 			System.out.println("404 - Not Found");
-		}
-		
-		if(idConta == 0) {
-			return idConta;
-		}
-		
+		}	
 		return idConta;
 	}
 	
@@ -51,16 +46,13 @@ public class Controller {
 			controllerLancamento.cadastrarEntrada(idConta);
 			break;
 		case 2:
-			
+			controllerLancamento.cadastrarSaida(idConta);
 			break;
 		case 3:
-			
+			controllerLancamento.mostrarHistorico(idConta);
 			break;
-		case 4:
-			
-			break;
-
 		default:
+			System.out.println("404 - Not Found");
 			break;
 		}
 	}

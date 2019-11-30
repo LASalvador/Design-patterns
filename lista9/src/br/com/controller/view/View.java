@@ -27,8 +27,7 @@ public class View {
 		System.out.println("Escolha uma opção:");
 		System.out.println("1 - Cadastro de entradas");
 		System.out.println("2 - Cadastro de saidas");
-		System.out.println("3 - Relatorios mensais");
-		System.out.println("4 - Relatorios semanais");
+		System.out.println("3 - Exibir histórico de transações");
 		return this.scanner.nextInt();
 	}
 	

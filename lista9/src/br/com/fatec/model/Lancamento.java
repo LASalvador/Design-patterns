@@ -36,6 +36,10 @@ public class Lancamento {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.tipoLancamento + " - " + this.classificacao + " - " + this.valor;
+	}
 	
 }
